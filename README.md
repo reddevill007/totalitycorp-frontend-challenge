@@ -1,4 +1,14 @@
-# E-Commerce Website - Project Title
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Setup and Usage](#setup-and-usage)
+- [Screenshots](#screenshots)
+- [Acknowledgments](#acknowledgments)
+
+## Introduction
 
 Welcome to my E-Commerce Website project! This README provides an in-depth overview of the project's purpose, features, folder structure, setup instructions, and more.
 
@@ -6,19 +16,21 @@ Welcome to my E-Commerce Website project! This README provides an in-depth overv
 
 The project is built using modern technologies and libraries to ensure a seamless user experience:
 
-- **Next.js:** A powerful React framework for server-rendered applications.
-- **Tailwind CSS:** A utility-first CSS framework for building responsive and stylish UI components.
-- **useContext API:** Leveraging the context API for state management.
-- **NextAuth:** Implementing authentication with support for Google and GitHub sign-ins.
+- `Next.js 13:` A powerful React framework for server-rendered applications.
+- `Tailwind CSS:`A utility-first CSS framework for building responsive and stylish UI components.
+- `useContext API:` Leveraging the context API for state management.
+- `NextAuth:` Implementing authentication with support for Google and GitHub sign-ins.
+- `stripe:` Implementing payment gateway for checkout.
 
 ## Features
 
 This E-Commerce Website showcases a range of features that mimic real-world online shopping experiences:
 
-- **Product Listing:** Display an assortment of products with detailed information.
-- **Cart Management:** Allow users to add, remove, and update product quantities in the cart.
-- **Checkout Process:** Implement a seamless checkout process with shipping and payment details.
-- **Responsive Design:** Ensure the website is accessible and usable across different devices.
+- `Product Listing:` Display an assortment of products with detailed information.
+- `Product Filtering & Searching:` Allows user to filter and search products.
+- `Cart Management:` Allow users to add, remove, and update product quantities in the cart.
+- `Checkout Process:` Implement a seamless checkout process with shipping and payment details.
+- `Responsive Design:` Ensure the website is accessible and usable across different devices.
 
 ## Folder Structure
 
@@ -27,12 +39,14 @@ The project's folder structure is organized to maintain clarity and separation o
 - `src/`: The root of the source code.
   - `components/`: Reusable UI components that contribute to the app's structure.
   - `context/`: Contains the `CartContext` setup for managing the cart state.
-  - `auth/`: Includes components and setup for NextAuth-based authentication.
-  - `pages/`: Next.js page components that map to specific routes.
-    - `index.js`: The homepage component displaying the product listing.
-    - `cart.js`: The cart component for managing shopping cart items.
-    - `checkout.js`: The checkout component with the order summary and form.
-  - `utils/`: Utility functions and modules used throughout the application.
+  - `app/`: Next.js app folder that map to specific routes.
+    - `api/auth/`: Includes components and setup for NextAuth-based authentication.
+    - `cart/`: Cart page rout component
+      - `page.js`: The cart component for managing shopping cart items.
+    - `checkout/`: Checkout page rout component
+      - `page.js`: The checkout component with the order summary and form.
+    - `page.jsx`: Main page route component.
+    - `layout.js`: Layout files used by pages.
 
 ## Setup and Usage
 
@@ -60,7 +74,6 @@ I'd like to extend my gratitude to the following resources and communities that 
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [NextAuth Documentation](https://next-auth.js.org/getting-started/introduction)
 - [Fakestore API](https://fakestoreapi.com/)
-- [Stack Overflow](https://stackoverflow.com/)
 
 ---
 
