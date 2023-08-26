@@ -1,5 +1,8 @@
 import "@/app/globals.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Inter } from "next/font/google";
+import { ToastContainer } from "@/components/ToastWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +15,7 @@ export default function LoginLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ToastContainer />
         <section>{children}</section>
       </body>
     </html>

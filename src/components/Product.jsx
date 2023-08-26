@@ -7,6 +7,7 @@ import { CartItemContext } from '@/context/CartItemContext';
 const Product = ({ product }) => {
     const { addToCart } = useContext(CartItemContext);
     const { id, image, title, price, category } = product;
+
     return (
         <div>
             <div className='border border-gray-400 h-[300px] w-[300px] mb-4 relative overflow-hidden group transition'>

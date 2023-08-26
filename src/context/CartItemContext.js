@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const CartItemContext = createContext();
 
@@ -42,6 +43,18 @@ const CartItemProvider = ({ children }) => {
     } else {
       setCart([...cart, newItem]);
     }
+
+    toast("Item added to cart 😎", {
+      type: "info",
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const removeFromCart = (id) => {
@@ -49,10 +62,33 @@ const CartItemProvider = ({ children }) => {
       return item.id !== id;
     });
     setCart(newCart);
+
+    toast("Item removed from cart 😢", {
+      type: "error",
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const clearCart = () => {
     setCart([]);
+    toast("Cleared your cart 😢", {
+      type: "error",
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const increaseCount = (id) => {
