@@ -25,7 +25,7 @@ const Home = () => {
         {/* Category */}
         <div>
           <ul className="flex px-2 text-sm font-medium gap-4 mb-6 overflow-x-scroll noscrollbar">
-            <li className="bg-blue-400 px-2 py-1 text-sm rounded w-fit whitespace-nowrap">All</li>
+            <li className="border-blue-400 text-blue-400 px-2 py-1 text-sm rounded w-fit whitespace-nowrap">All</li>
             <li className="bg-blue-400 px-2 py-1 text-sm rounded w-fit whitespace-nowrap">Men&#039;s Clothing</li>
             <li className="bg-blue-400 px-2 py-1 text-sm rounded w-fit whitespace-nowrap">Women&#039;s Clothing</li>
             <li className="bg-blue-400 px-2 py-1 text-sm rounded w-fit whitespace-nowrap">Accessories</li>

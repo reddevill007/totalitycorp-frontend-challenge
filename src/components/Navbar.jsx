@@ -30,7 +30,7 @@ const Navbar = () => {
                 </Link>
                 <div className='flex items-center justify-center gap-2'>
                     <img className='h-10 w-10 rounded-full' src={session?.data?.user?.image} alt="" />
-                    {session?.data?.user?.name}
+                    <p className='hidden md:block'>{session?.data?.user?.name}</p>
                 </div>
                 <div className='flex items-center justify-center gap-4'>
                     <div className='cursor-pointer flex relative max-w-[50px]' onClick={() => { setIsOpen((prev) => !prev) }}>
