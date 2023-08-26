@@ -5,3 +5,24 @@
 * {
   scroll-behavior: smooth;
 }
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.noscrollbar::-webkit-scrollbar {
+  height: 0px;
+
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #60a5fa;
+  transition: 0.5s ease;
+  cursor: pointer;
+}

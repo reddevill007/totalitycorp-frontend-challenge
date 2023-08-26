@@ -1,11 +1,27 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartItemContext = createContext();
 
 const CartItemProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [itemAmount, setItemAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // Total Price
+  useEffect(() => {
+    const total = cart.reduce((accumulator, currentItem) => {
+      return accumulator + currentItem.amount * currentItem.price;
+    }, 0);
+    setTotalPrice(parseFloat(total).toFixed(2));
+  }, [cart]);
+
+  //  Total unique item in cart
+  useEffect(() => {
+    const amount = cart.length;
+    setItemAmount(amount);
+  }, [cart]);
 
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
@@ -71,6 +87,10 @@ const CartItemProvider = ({ children }) => {
         clearCart,
         increaseCount,
         decreaseCount,
+        itemAmount,
+        setItemAmount,
+        totalPrice,
+        setTotalPrice,
       }}
     >
       {children}

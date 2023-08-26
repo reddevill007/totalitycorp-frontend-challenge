@@ -19,7 +19,7 @@ const Product = ({ product }) => {
                     {/* add to cart and detailed product page */}
                     <div className='absolute top-4 -right-12 group-hover:right-5 transition-all duration-300 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100'>
                         <button onClick={() => addToCart(product, id)}>
-                            <div className='flex justify-center items-center text-white w-10 h-10 bg-red-500'>
+                            <div className='flex justify-center items-center text-white w-10 h-10 bg-blue-400'>
                                 <BsPlus className='text-3xl' />
                             </div>
                         </button>
@@ -33,7 +33,7 @@ const Product = ({ product }) => {
                 <Link href={`/product/${id}`}>
                     <h2 className='font-semibold mb-1  text-lg'>{title}</h2>
                 </Link>
-                <div className='text-white bg-red-500/40 p-1 rounded w-fit'>${price}</div>
+                <div className='text-white bg-blue-400 p-1 rounded w-fit'>${price}</div>
             </div>
         </div>
     )
