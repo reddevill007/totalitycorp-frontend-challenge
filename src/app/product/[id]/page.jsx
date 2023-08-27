@@ -44,7 +44,7 @@ export default function ProductPage({ params }) {
                     <span className='text-sm capitalize text-gray-500 mb-4'>{category}</span>
                     <div className="text-xl text-red-500 font-medium mb-6">$ {price}</div>
                     <p className="mb-8">{description}</p>
-                    <button className='flex gap-2 px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, id)}>
+                    <button className='flex gap-2 px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, parseInt(id))}>
                         Add to Cart
                         <AiOutlineShoppingCart className="stroke-[#fff] font-extrabold" />
                     </button>
