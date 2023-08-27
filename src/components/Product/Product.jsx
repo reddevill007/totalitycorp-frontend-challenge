@@ -10,7 +10,7 @@ const Product = ({ product }) => {
 
     return (
         <div>
-            <div className='border border-gray-400 h-[300px] w-[300px] mb-4 relative overflow-hidden group transition'>
+            <div className='border border-gray-400 h-[300px] max-w-[300px] w-[300px] mb-4 relative overflow-hidden group transition'>
                 <div className="w-full h-full flex justify-center items-center">
                     {/* product image */}
                     <div className='w-[200px] mx-auto flex justify-center items-center'>
@@ -32,7 +32,7 @@ const Product = ({ product }) => {
             <div>
                 <span className='text-sm capitalize text-gray-500 mb-1'>{category}</span>
                 <Link href={`/product/${id}`}>
-                    <h2 className='font-semibold mb-1  text-lg'>{title}</h2>
+                    <h2 className='font-semibold mb-1 w-[300px] text-lg'>{title.length > 25 ? `${title.substring(0, 26)}...` : title}</h2>
                 </Link>
                 <div className='text-white bg-blue-400 p-1 rounded w-fit'>${price}</div>
             </div>

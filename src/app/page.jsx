@@ -57,7 +57,7 @@ const Home = () => {
 
         {/* Error */}
         {error && !loading ? (<p>error</p>) : null}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 px-4 md:px-0">
+        <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 px-4 md:px-0">
           {products.filter((el) => filterProductSearchQuery(el)).filter((el) => filterSelectedCategoryOptions(el)).map((product) => {
             return (
               <Product product={product} key={product.id} />
