@@ -3,13 +3,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { Inter } from "next/font/google";
 
-import AuthProvider from "@/components/AuthProvider";
+import AuthProvider from "@/components/Auth/AuthProvider";
 import ProductProvider from "@/context/ProductContext";
 import CartProvider from "@/context/CartContext";
-import Navbar from "@/components/Navbar";
-import Cart from "@/components/Cart";
+import Navbar from "@/components/Header/Navbar";
+import Cart from "@/components/Cart/Cart";
 import CartItemProvider from "@/context/CartItemContext";
-import { ToastContainer } from "@/components/ToastWrapper";
+import { ToastContainer } from "@/components/Toast/ToastWrapper";
+import SearchProvoder from "@/context/SearchContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,17 +24,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ToastContainer />
-        <CartProvider>
-          <CartItemProvider>
-            <ProductProvider>
-              <AuthProvider>
-                <Navbar />
-                <Cart />
-                {children}
-              </AuthProvider>
-            </ProductProvider>
-          </CartItemProvider>
-        </CartProvider>
+        <SearchProvoder>
+          <CartProvider>
+            <CartItemProvider>
+              <ProductProvider>
+                <AuthProvider>
+                  <Navbar />
+                  <Cart />
+                  {children}
+                </AuthProvider>
+              </ProductProvider>
+            </CartItemProvider>
+          </CartProvider>
+        </SearchProvoder>
       </body>
     </html>
   );

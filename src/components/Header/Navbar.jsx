@@ -37,8 +37,8 @@ const Navbar = () => {
                         <BsBag className='text-2xl' />
                         <div className="bg-blue-400 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">{itemAmount}</div>
                     </div>
-                    <div onClick={signOut} className='cursor-pointer h-10 w-10 rounded-full bg-red-500 flex items-center justify-center'>
-                        <VscSignOut className='text-2xl' />
+                    <div onClick={signOut} className='cursor-pointer h-10 w-10 flex items-center justify-center'>
+                        <VscSignOut className='text-2xl text-red-500' />
                     </div>
                 </div>
             </div>
