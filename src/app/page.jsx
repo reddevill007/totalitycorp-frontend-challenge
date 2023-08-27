@@ -9,22 +9,35 @@ import Product from "@/components/Product/Product";
 import ProductSearch from "@/components/Filter/ProductSearch";
 import { SearchContext } from "@/context/SearchContext";
 import FilterCategory from "@/components/Filter/FilterCategory";
+import Loading from "@/components/Product/Loading";
 
 const Home = () => {
-  const { products } = useContext(ProductContext);
+  const { products, loading, error } = useContext(ProductContext);
   const { searchTerm } = useContext(SearchContext);
+  const { category } = useContext(SearchContext)
+
 
 
   const filterProductSearchQuery = (el) => {
     return el.title.toLowerCase().includes(searchTerm.toLowerCase())
   }
 
+  const filterSelectedCategoryOptions = (el) => {
+    if (category === 'all') {
+      return el;
+    } else if (category === 'men') {
+      return el.category === "men's clothing"
+    } else if (category === 'women') {
+      return el.category === "women's clothing"
+    } else if (category === 'jewelery') {
+      return el.category === "jewelery"
+    } else if (category === 'electronics') {
+      return el.category === "electronics"
+    }
+  };
+
   const session = useSession()
   const router = useRouter()
-
-  // const filteredProducts = products.filter(item => {
-  //   return item.category === "men's clothing" || item.category === "women's clothing"
-  // })
 
   if (session.status === "unauthenticated") {
     router.push("/login")
@@ -35,11 +48,17 @@ const Home = () => {
       <div className="container mx-auto">
         {/* Search */}
         <ProductSearch />
+
         {/* Category */}
         <FilterCategory />
 
+        {/* Loading */}
+        {loading ? (<Loading />) : null}
+
+        {/* Error */}
+        {error && !loading ? (<p>error</p>) : null}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 px-4 md:px-0">
-          {products.filter((el) => filterProductSearchQuery(el)).map((product) => {
+          {products.filter((el) => filterProductSearchQuery(el)).filter((el) => filterSelectedCategoryOptions(el)).map((product) => {
             return (
               <Product product={product} key={product.id} />
             )

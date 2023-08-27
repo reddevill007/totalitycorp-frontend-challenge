@@ -1,11 +1,14 @@
 "use client"
 
 import { useContext } from "react";
+import Link from "next/link";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { IoMdArrowForward } from "react-icons/io";
+
 import { CartItemContext } from "@/context/CartItemContext";
 import { ProductContext } from "@/context/ProductContext";
-import Link from "next/link";
 
-import { GrCart } from 'react-icons/gr'
+
 export default function ProductPage({ params }) {
     const { id } = params;
 
@@ -42,10 +45,12 @@ export default function ProductPage({ params }) {
                     <div className="text-xl text-red-500 font-medium mb-6">$ {price}</div>
                     <p className="mb-8">{description}</p>
                     <button className='flex gap-2 px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, id)}>
-                        <GrCart className="stroke-[#fff]" /> Add to Cart
+                        Add to Cart
+                        <AiOutlineShoppingCart className="stroke-[#fff] font-extrabold" />
                     </button>
-                    <Link href="/" className='inline-block px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, id)}>
+                    <Link href="/" className='flex justify-center items-center gap-2 w-fit px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded'>
                         Continue Shopping
+                        <IoMdArrowForward className='text-xl text-white' />
                     </Link>
                 </div>
             </div>

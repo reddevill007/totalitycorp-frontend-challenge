@@ -45,8 +45,8 @@ const CartItemProvider = ({ children }) => {
     }
 
     toast("Item added to cart 😎", {
-      type: "info",
-      position: "top-right",
+      type: "success",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -64,8 +64,8 @@ const CartItemProvider = ({ children }) => {
     setCart(newCart);
 
     toast("Item removed from cart 😢", {
-      type: "error",
-      position: "top-right",
+      type: "success",
+      position: "top-center",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -79,8 +79,8 @@ const CartItemProvider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
     toast("Cleared your cart 😢", {
-      type: "error",
-      position: "top-right",
+      type: "success",
+      position: "top-center",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
