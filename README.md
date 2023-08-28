@@ -1,6 +1,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Folder Structure](#folder-structure)
@@ -11,6 +12,10 @@
 ## Introduction
 
 Welcome to my E-Commerce Website project! This README provides an in-depth overview of the project's purpose, features, folder structure, setup instructions, and more.
+
+## Deployment
+
+[Live Demo](https://totalitycorp-ashy.vercel.app/)
 
 ## Technologies Used
 
