@@ -36,18 +36,22 @@ export default function ProductPage({ params }) {
                         <img src={image} alt={title} className="max-w-[200px] lg:max-w-sm" />
                     </div>
                     <div className="flex-1 text-center lg:text-left">
-                        <h1 className="text-[26px] font-medium mb-2 max-w-[450px]">{title}</h1>
+                        <div className="flex items-center justify-center w-full lg:block">
+                            <h1 className="text-[26px] font-medium mb-2 max-w-[450px]">{title}</h1>
+                        </div>
                         <span className='text-sm capitalize text-gray-500 mb-4'>{category}</span>
                         <div className="text-xl text-red-500 font-medium mb-6">$ {price}</div>
                         <p className="mb-8">{description}</p>
-                        <button className='flex gap-2 px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, parseInt(id))}>
-                            Add to Cart
-                            <AiOutlineShoppingCart className="stroke-[#fff] font-extrabold" />
-                        </button>
-                        <Link href="/" className='flex justify-center items-center gap-2 w-fit px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded'>
-                            Continue Shopping
-                            <IoMdArrowForward className='text-xl text-white' />
-                        </Link>
+                        <div className="flex items-center justify-center gap-2 flex-wrap lg:justify-start">
+                            <button className='flex gap-2 px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded' onClick={() => addToCart(product, parseInt(id))}>
+                                Add to Cart
+                                <AiOutlineShoppingCart className="stroke-[#fff] font-extrabold" />
+                            </button>
+                            <Link href="/" className='flex justify-center items-center gap-2 w-fit px-8 py-3 my-4 font-medium leading-none text-white transition duration bg-blue-400 rounded'>
+                                Continue Shopping
+                                <IoMdArrowForward className='text-xl text-white' />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
