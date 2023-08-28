@@ -4,6 +4,7 @@ import React from 'react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 
 const Login = () => {
@@ -13,6 +14,21 @@ const Login = () => {
 
     if (session.status === "authenticated") {
         router.push("/")
+    }
+
+    const handleLogin = (provider) => {
+        signIn(provider);
+        toast("Successfully Logged In", {
+            type: "success",
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     const BG_IMG = "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg"
@@ -33,7 +49,7 @@ const Login = () => {
                                 <div className="w-full flex-1">
                                     <div className="flex gap-4 flex-col items-center">
                                         <button
-                                            onClick={() => signIn("google")}
+                                            onClick={() => handleLogin("google")}
                                             className="w-fit outline-none max-w-xs font-bold shadow-sm rounded-lg py-3 px-7 bg-indigo-100 text-gray-800 flex items-center justify-center">
                                             <div className="bg-white p-2 rounded-full">
                                                 <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -57,7 +73,7 @@ const Login = () => {
                                         </button>
 
                                         <button
-                                            onClick={() => signIn("github")}
+                                            onClick={() => handleLogin("github")}
                                             className="w-fit outline-none max-w-xs font-bold shadow-sm rounded-lg py-3 px-7 bg-indigo-100 text-gray-800 flex items-center justify-center"
                                         >
                                             <div className="bg-white p-1 rounded-full">

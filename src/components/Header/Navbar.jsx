@@ -8,6 +8,7 @@ import { CartContext } from '@/context/CartContext';
 import { CartItemContext } from '@/context/CartItemContext';
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState(false);
@@ -21,6 +22,21 @@ const Navbar = () => {
             window.scrollY > 20 ? setIsActive(true) : setIsActive(false);
         })
     }, [])
+
+    const handleLogout = () => {
+        toast("Successfully Logged Out", {
+            type: "success",
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+        signOut();
+    }
 
     return (
         <header className={`${isActive ? 'bg-white py-4 shadow-md' : 'bg-none py-6'} fixed z-10 w-full transition-all`}>
@@ -37,7 +53,7 @@ const Navbar = () => {
                         <BsBag className='text-2xl' />
                         <div className="bg-blue-400 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">{itemAmount}</div>
                     </div>
-                    <div onClick={signOut} className='cursor-pointer h-10 w-10 flex items-center justify-center'>
+                    <div onClick={handleLogout} className='cursor-pointer h-10 w-10 flex items-center justify-center'>
                         <VscSignOut className='text-2xl text-red-500' />
                     </div>
                 </div>

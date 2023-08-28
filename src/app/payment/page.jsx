@@ -5,15 +5,27 @@ import { useContext } from 'react'
 import { CartItemContext } from '@/context/CartItemContext';
 import { AiFillLock } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const PaymentPage = () => {
-    const { totalPrice } = useContext(CartItemContext);
+    const { totalPrice, clearCart } = useContext(CartItemContext);
 
     const router = useRouter();
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
+        clearCart();
+        toast("Hurreyy!!! Payment Successfull", {
+            type: "success",
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         router.push("/payment/success")
     }
 
