@@ -62,9 +62,12 @@ To run the project locally, follow these steps:
 
 Here are a few screenshots showcasing different parts of the application:
 
-- Homepage with Product Listing
-- Cart Page for Managing Items
-- Checkout Page with Order Summary
+- Homepage with Product Listing, Filtering, Searching and Login Page using Google and Github
+  [![Screenshot1](https://raw.githubusercontent.com/reddevill007/totalitycorp-frontend-challenge/main/public/mockup1.png)](https://totalitycorp-ashy.vercel.app/)
+- Cart Page and Detailed Product Page
+  [![Screenshot2](https://raw.githubusercontent.com/reddevill007/totalitycorp-frontend-challenge/main/public/mockup2.png)](https://totalitycorp-ashy.vercel.app/)
+- Checkout Page with Order Summary, Payment and Shipping Address
+  [![Screenshot3](https://raw.githubusercontent.com/reddevill007/totalitycorp-frontend-challenge/main/public/mockup3.png)](https://totalitycorp-ashy.vercel.app/)
 
 ## Acknowledgments
 
