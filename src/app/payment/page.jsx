@@ -6,11 +6,17 @@ import { CartItemContext } from '@/context/CartItemContext';
 import { AiFillLock } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { useSession } from 'next-auth/react';
 
 const PaymentPage = () => {
     const { totalPrice, clearCart } = useContext(CartItemContext);
 
     const router = useRouter();
+    const session = useSession()
+
+    if (session.status === "unauthenticated") {
+        router.push("/login")
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()

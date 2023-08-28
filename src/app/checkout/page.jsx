@@ -3,6 +3,7 @@
 import { ChechoutContext } from '@/context/ChechoutContext'
 import { useContext } from 'react'
 import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 
 const CheckoutPage = () => {
     const { setDetails } = useContext(ChechoutContext);
@@ -17,6 +18,12 @@ const CheckoutPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         router.push("/payment")
+    }
+
+    const session = useSession()
+
+    if (session.status === "unauthenticated") {
+        router.push("/login")
     }
 
     return (

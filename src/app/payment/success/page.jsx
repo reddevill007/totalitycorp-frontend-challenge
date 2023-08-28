@@ -1,8 +1,17 @@
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IoMdArrowForward } from 'react-icons/io'
 
 const SuccessPage = () => {
+    const session = useSession()
+    const router = useRouter()
+
+    if (session.status === "unauthenticated") {
+        router.push("/login")
+    }
+
     return (
         <section className='py-32 flex justify-center items-center h-screen'>
             <div className="bg-white p-6  md:mx-auto">

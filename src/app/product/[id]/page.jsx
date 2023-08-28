@@ -8,6 +8,8 @@ import { IoMdArrowForward } from "react-icons/io";
 import { CartItemContext } from "@/context/CartItemContext";
 import { ProductContext } from "@/context/ProductContext";
 import NotFound from "@/components/NotFound/NotFound";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 
 export default function ProductPage({ params }) {
@@ -19,6 +21,13 @@ export default function ProductPage({ params }) {
     const product = products.find((item) => {
         return item.id === parseInt(id);
     })
+
+    const session = useSession()
+    const router = useRouter()
+
+    if (session.status === "unauthenticated") {
+        router.push("/login")
+    }
 
     if (!product) {
         return (
