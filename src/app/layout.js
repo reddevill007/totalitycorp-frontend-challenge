@@ -13,6 +13,7 @@ import Cart from "@/components/Cart/Cart";
 import CartItemProvider from "@/context/CartItemContext";
 import { ToastContainer } from "@/components/Toast/ToastWrapper";
 import SearchProvoder from "@/context/SearchContext";
+import CheckoutProvider from "@/context/ChechoutContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,19 +38,21 @@ export default function RootLayout({ children }) {
           shadow="0 0 10px #2299DD,0 0 5px #2299DD"
         />
         <ToastContainer />
-        <SearchProvoder>
-          <CartProvider>
-            <CartItemProvider>
-              <ProductProvider>
-                <AuthProvider>
-                  <Navbar />
-                  <Cart />
-                  {children}
-                </AuthProvider>
-              </ProductProvider>
-            </CartItemProvider>
-          </CartProvider>
-        </SearchProvoder>
+        <CheckoutProvider>
+          <SearchProvoder>
+            <CartProvider>
+              <CartItemProvider>
+                <ProductProvider>
+                  <AuthProvider>
+                    <Navbar />
+                    <Cart />
+                    {children}
+                  </AuthProvider>
+                </ProductProvider>
+              </CartItemProvider>
+            </CartProvider>
+          </SearchProvoder>
+        </CheckoutProvider>
       </body>
     </html>
   );

@@ -45,7 +45,7 @@ const Cart = () => {
                 ) :
                 (
                     <>
-                        <div className='h-[calc(100vh-230px)] overflow-y-scroll'>
+                        <div className='h-[calc(100vh-170px)] overflow-y-scroll'>
                             {cart.map(item => {
                                 return <CartItem item={item} key={item.id} />
                             })}
@@ -60,7 +60,6 @@ const Cart = () => {
                                         <FiTrash2 />
                                     </div>
                                 </div>
-                                <Link href="/cart" className='bg-gray-200 h-10 flex p-4 justify-center items-center text-gray-800 w-full font-medium'>View Cart</Link>
                                 <Link href="/checkout" className='bg-blue-400 h-10 flex p-4 justify-center items-center text-gray-800 w-full font-medium'>Checkout</Link>
                             </div>
                         </div>
