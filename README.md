@@ -25,7 +25,6 @@ The project is built using modern technologies and libraries to ensure a seamles
 - `Tailwind CSS:`A utility-first CSS framework for building responsive and stylish UI components.
 - `useContext API:` Leveraging the context API for state management.
 - `NextAuth:` Implementing authentication with support for Google and GitHub sign-ins.
-- `stripe:` Implementing payment gateway for checkout.
 
 ## Features
 
