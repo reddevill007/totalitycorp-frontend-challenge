@@ -21,6 +21,11 @@ const Cart = () => {
         router.push('/')
     }
 
+    const handleCheckoutClick = () => {
+        handleClose();
+        router.push('/checkout')
+    }
+
     return (
         <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-white fixed top-0 h-full shadow-2xl md:w-[40vw] lg:w-[35vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
             <div className="flex items-center justify-between py-6 border-b h-12">
@@ -60,7 +65,7 @@ const Cart = () => {
                                         <FiTrash2 />
                                     </div>
                                 </div>
-                                <Link href="/checkout" className='bg-blue-400 h-10 flex p-4 justify-center items-center text-gray-800 w-full font-medium'>Checkout</Link>
+                                <button onClick={handleCheckoutClick} className='bg-blue-400 h-10 flex p-4 justify-center items-center text-gray-800 w-full font-medium'>Checkout</button>
                             </div>
                         </div>
                     </>
